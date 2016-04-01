@@ -2,15 +2,16 @@
   <h1>Welcome to PartialArts</h1>
 </div>
 
-<a href="/artists">All Artists</a> <br>
-<a href="/belts">Artists by Belt Color</a> <br>
+<%= artist_url %><br>
+<%= link_to('belts', 'Artist by Belt Color') %><br>
+
 <a href="/categories">Artists by Category</a> <br>
 
 <div class="belt-statistics">
   <h3>Belt Stats</h3>
   <% @belt_statistics.each do |belt, count| %>
     <p>
-      <%= belt.color.capitalize %> belt: <%= count %> artists
+      <%= format_title(belt.color) %> belt: <%= count %> artists
     </p>
   <% end %>
 </div>
